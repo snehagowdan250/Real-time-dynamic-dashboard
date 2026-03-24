@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMS Techs | Executive Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>VMS Techs</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><i class="fas fa-home"></i> Overview</li>
+                    <li><i class="fas fa-database"></i> Real-Time Data</li>
+                    <li><i class="fas fa-file-invoice-dollar"></i> Revenue</li>
+                    <li><i class="fas fa-shield-alt"></i> Risk Analysis</li>
+                    <li><i class="fas fa-cog"></i> Settings</li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>System Status: <span id="status-dot"></span> <span id="status-text">Live</span></p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-nav">
+                <h2>Business Intelligence Overview</h2>
+                <div class="user-profile">
+                    <span>Welcome, *Analyst*</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+
+            <section class="kpi-grid">
+                <div class="card kpi">
+                    <h3>Annual Revenue</h3>
+                    <p class="stat">$ <span id="revenue-val">0.0</span>B</p>
+                    <span class="trend positive">+12% vs last month</span>
+                </div>
+                <div class="card kpi">
+                    <h3>Active Users</h3>
+                    <p class="stat" id="user-val">0</p>
+                    <span class="trend">Real-time tracking</span>
+                </div>
+                <div class="card kpi">
+                    <h3>Risk Level</h3>
+                    <p class="stat" id="risk-val">Low</p>
+                    <span class="trend negative">Action required</span>
+                </div>
+            </section>
+
+            <section class="chart-section">
+                <div class="card chart-container">
+                    <div class="chart-header">
+                        <h3>Dynamic Revenue Insights</h3>
+                        <button class="btn-refresh"><i class="fas fa-sync"></i> Refresh</button>
+                    </div>
+                    <canvas id="mainBusinessChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
